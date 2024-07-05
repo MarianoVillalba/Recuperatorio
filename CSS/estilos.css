@@ -1,0 +1,174 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "menu"
+        "hero"
+        "main"
+        "banner"
+        "extra"
+        "image";
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    gap: 0px; /* Añadido para espacio entre las áreas */
+}
+
+.header { 
+    grid-area: header; 
+    background-color: #1E2022; /* Color de fondo oscuro */
+    color: white; 
+    padding: 10px; 
+    text-align: center;
+}
+.menu { 
+    grid-area: menu; 
+    background-color: #F44336; /* Color de fondo rojo */
+    color: white; 
+    padding: 10px; 
+    text-align: center;
+}
+.hero { 
+    grid-area: hero; 
+    background-color: #2196F3; /* Color de fondo azul */
+    color: white; 
+    padding: 10px; 
+    text-align: center;
+}
+.main { 
+    grid-area: main; 
+    background-color: #263238; /* Color de fondo gris oscuro */
+    color: white; 
+    padding: 10px; 
+    text-align: center;
+}
+.banner { 
+    grid-area: banner; 
+    background-color: #FFEB3B; /* Color de fondo amarillo */
+    color: black; 
+    padding: 10px; 
+    text-align: center; 
+}
+.extra { 
+    grid-area: extra; 
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white; 
+    padding: 10px; 
+    text-align: center; 
+}
+.image { 
+    grid-area: image; 
+    background-color: #B2EBF2; /* Color de fondo azul claro */
+    color: black; 
+    padding: 10px; 
+    text-align: center;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 767px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "menu"
+            "hero"
+            "main"
+            "banner"
+            "extra"
+            "image";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+    }
+}
+
+/* Estilos para tablets */
+@media (min-width: 768px) {
+.container { 
+        grid-template-columns: 20% 50% auto;
+        grid-template-areas: 
+        "header header header"
+        "hero hero hero"
+        "menu main main"
+        "menu banner banner"
+        "menu extra image";
+    } 
+}
+
+.header { 
+    grid-template-areas:header;
+
+}
+
+.hero {
+    grid-template-areas: hero;
+}
+
+.menu {
+    grid-template-areas: menu;
+}
+
+.main {
+    grid-template-areas: main;
+}
+
+.banner {
+    grid-template-areas: banner;
+}
+
+.extra {
+    grid-template-areas: extra;
+}
+
+.image {
+    grid-template-areas: image;
+}
+
+/* Estilos para PCs */
+@media (min-width: 1024px) {
+    .container {
+        display: grid; /* Asegúrate de que el contenedor esté usando grid */
+        grid-template-columns: 40% 40% auto; /* Define tres columnas: una para el menú y dos para contenido */
+        grid-template-rows: 5% 40% 20% 20% auto; /* Define la altura de las filas */
+        grid-template-areas:
+            "header menu menu" /* Header ocupa dos columnas y el menú una columna */
+            "hero hero hero" /* Hero ocupa todas las columnas */
+            "main . image" /* Main ocupa dos filas, espacio vacío en la segunda columna y image en la tercera */
+            "main . extra" /* Main ocupa dos filas, espacio vacío en la segunda columna y extra en la tercera */
+            "banner banner banner"; /* Banner ocupa todas las columnas */
+   
+    }
+    .header { 
+        grid-template-areas:header;
+
+    }
+
+    .hero {
+        grid-template-areas: hero;
+    }
+
+    .menu {
+        grid-template-areas: menu;
+    }
+
+    .main {
+        grid-template-areas: main;
+    }
+
+    .banner {
+        grid-template-areas: banner;
+    }
+
+    .extra {
+        grid-template-areas: extra;
+    }
+
+    .image {
+        grid-template-areas: image;
+    }
+}
